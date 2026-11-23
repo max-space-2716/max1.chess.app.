@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play a local, two-player game of chess in your browser.">
+  <meta name="theme-color" content="#131a17">
+  <title>MAX Chess</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="MAX Chess home">
+        <img src="./icon.svg" alt="" width="34" height="34">
+        <span>MAX<span class="brand-accent"> / </span>CHESS</span>
+      </a>
+      <span class="masthead-label">THE PLAY ROOM</span>
+    </header>
+    <div class="intro">
+      <p class="eyebrow">LOCAL PLAY</p>
+      <h1>Play chess.</h1>
+      <p>Two players, one board. Select a piece, then choose where to move it.</p>
+    </div>
+    <noscript>Enable JavaScript to play chess.</noscript>
+    <section class="game" aria-label="Chess game">
+      <div id="board" class="board" role="group" aria-label="Chessboard" aria-describedby="board-help"></div>
+      <aside class="game-panel" aria-label="Game details">
+        <div class="turn">
+          <span id="turn-disc" class="turn-disc" aria-hidden="true"></span>
+          <div>
+            <p class="eyebrow">TURN STATUS</p>
+            <p id="status" role="status">Loading board…</p>
+          </div>
+        </div>
+        <section class="history" aria-labelledby="moves-title">
+          <h2 id="moves-title">Moves</h2>
+          <div id="move-log" class="move-log">
+            <p id="empty-log">Your moves will appear here.</p>
+            <ol id="moves"></ol>
+          </div>
+        </section>
+        <div class="actions">
+          <button id="undo" type="button" disabled>Undo</button>
+          <button id="flip" type="button" disabled>Flip board</button>
+          <button id="reset" type="button" disabled>New game</button>
+        </div>
+      </aside>
+    </section>
+    <p id="board-help" class="board-help">Keyboard: arrow keys navigate the board; Enter or Space selects a square.</p>
+  </main>
+  <dialog id="promotion" aria-labelledby="promotion-title">
+    <h2 id="promotion-title">Promote pawn</h2>
+    <div class="promotion-options">
+      <button type="button" value="q" autofocus>Queen</button>
+      <button type="button" value="r">Rook</button>
+      <button type="button" value="b">Bishop</button>
+      <button type="button" value="n">Knight</button>
+      <button type="button" value="cancel">Cancel</button>
+    </div>
+  </dialog>
+</body>
+</html>

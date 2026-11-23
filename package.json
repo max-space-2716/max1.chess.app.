@@ -1,0 +1,12 @@
+{
+  "name": "max-chess-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "chess.js": "1.4.0"
+  }
+}
